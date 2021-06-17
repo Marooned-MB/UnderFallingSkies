@@ -1,0 +1,47 @@
+:host {
+    background-color: #e9f9ff;
+    border: 1px solid rgb(150, 41, 201);
+    display: flex;
+    position: relative;
+}
+
+.sky-card {
+    flex: 1 1 auto;
+
+    .side {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+
+    .fields {
+        align-items: center;
+        display: grid;
+        gap: 5px;
+        grid: repeat(4, 100px) / repeat(5, 100px);
+        justify-content: center;
+        justify-items: center;
+
+        .field {
+            background-color: #e6e6ff;
+            border: 1px solid blue;
+            border-radius: 5px;
+            display: grid;
+            height: 100%;
+            position: relative;
+            width: 100%;
+
+            fa-icon {
+                align-self: center;
+                justify-self: center;
+            }
+
+            .strength {
+                font-size: 18pt;
+                left: 40%;
+                position: absolute;
+                top: 67%;
+            }
+        }
+    }
+}

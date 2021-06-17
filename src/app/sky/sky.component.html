@@ -1,0 +1,18 @@
+<div *ngFor="let card of data" class="sky-card">
+    <span class="side">{{card.side === Side.EASY ? 'easy' : 'hard'}}</span>
+    <div class="fields">
+        <ng-container *ngFor="let row of card.fields" class="row">
+            <div *ngFor="let field of row" class="field">
+                <ng-container [ngTemplateOutlet]="getTemplateName(field.type)" [ngTemplateOutletContext]="field">
+                </ng-container>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+<ng-template #emptyTpl></ng-template>
+<ng-template #moveTpl let-strength="strength"><fa-icon size="2x" [icon]="strength === 1 ? faChevronRight : faChevronLeft"></fa-icon></ng-template>
+<ng-template #mothershipTpl><fa-icon size="2x" [icon]="faSpaceShuttle"></fa-icon></ng-template>
+<ng-template #explosionTpl let-strength="strength"><fa-icon size="2x" [icon]="faMeteor"></fa-icon> <span class="strength">{{strength}}+</span> </ng-template>
+
+<ng-template #excavatorTpl><fa-icon size="2x" [icon]="faSnowplow"></fa-icon></ng-template>
